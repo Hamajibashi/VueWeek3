@@ -80,8 +80,8 @@ const app = {
                 productModal.show();
             }
             else if(isNew === 'edit'){
-                this.tempProduct = {...item}; //使用淺拷貝避免外層物件一起更動
-                this.tempProduct.imagesUrl = []; //避免單圖產品無法追加圖片
+                //使用淺拷貝避免外層物件一起更動，以及避免單圖產品無法追加圖片
+                this.tempProduct = {imagesUrl:[],...item};
                 this.isNew = false; //編輯模式
                 productModal.show();
             }
