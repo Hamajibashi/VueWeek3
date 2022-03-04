@@ -9,7 +9,7 @@ const app = {
             apiUrl:'https://vue3-course-api.hexschool.io/v2',
             apiPath:'mylmii',
             products:[],
-            isNew:false, //用來分辨是新增還是編輯模式
+            isNew:false, //用來分辨是新增或編輯模式
             tempProduct:{
                 imagesUrl:[],
                 },
