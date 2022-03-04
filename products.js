@@ -1,5 +1,7 @@
 import {createApp} from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.29/vue.esm-browser.prod.min.js';
 
+let myModal = '';
+
 const app = {
     data(){
         return{
@@ -36,15 +38,22 @@ const app = {
         },
         openProduct(item){
             this.temp = item;
+        },
+        openModal(){
+            myModal.show();
+        },
+        closeModal(){
+            myModal.hide();
         }
     },
     mounted(){
         // 取得 Token
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)mylToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-              
         axios.defaults.headers.common['Authorization'] = token;
-
         this.checkLogin();
+
+        //
+        myModal = new bootstrap.Modal(document.querySelector('#productModal'));
     }
 }
 
